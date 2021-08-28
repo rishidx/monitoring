@@ -22,12 +22,12 @@ This project is integration of springboot application with prometheus
 	
 **Step 3)** Run Spring boot application, Browse to URL [http://127.0.0.1:8080/actuator](http://127.0.0.1:8080/actuator) and check for prometheus actuator endpoint along with other endpoints
 
-![Actuator endpoints image](actuator-image-1.png)
+![Actuator endpoints image](images/actuator-image-1.png)
 
 
 **Step 4)** Browse to [http://127.0.0.1:8080/actuator/prometheus](http://127.0.0.1:8080/actuator/prometheus) and check metrics exported from spring boot application 
 
-![Actuator Prometheus endpoint image](actuator-prometheus-image-1.png)
+![Actuator Prometheus endpoint image](images/actuator-prometheus-image-1.png)
 
 **Step 4)** Create a prometheus config file ***prometheus.yml*** file for prometheus to get metrics from spring boot application. 
 
@@ -37,21 +37,21 @@ This project is integration of springboot application with prometheus
     
 Browse to URL: [http://127.0.0.1:9090](http://127.0.0.1:9090)
 
-![Prometheus UI](prometheus-ui-1.png)
+![Prometheus UI](images/prometheus-ui-1.png)
 
 **Step 6)** List of metrics can be viewed as dropdown in prometheus old ui 
 
-![Prometheus OLD UI](prometheus-ui-3.png)
+![Prometheus OLD UI](images/prometheus-ui-3.png)
 
 or 
  
 browse [http://localhost:9090/metrics](http://localhost:9090/metrics)
 
-![Prometheus metrics UI](prometheus-metrics-ui-1.png)
+![Prometheus metrics UI](images/prometheus-metrics-ui-1.png)
 
 **Step 7)** Select any metrics and click Execute
 
-![Prometheus UI](prometheus-ui-2.png)
+![Prometheus UI](images/prometheus-ui-2.png)
 
 **Step 8)** To view metrics in Grafana, Run grafana image 
 
@@ -59,61 +59,61 @@ browse [http://localhost:9090/metrics](http://localhost:9090/metrics)
     
 Browse to URL [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
-![Grafana UI](grafana-1.png)
+![Grafana UI](images/grafana-1.png)
 
 **Step 9)** Login to Grafana (default username and password is admin/admin)
 
 **Step 10)** Goto Settings -> Data Sources to add datasources for Grafana
 
-![Grafana Datasources UI](grafana-datasource-1.png)
+![Grafana Datasources UI](images/grafana-datasource-1.png)
 
-![Grafana Datasources UI](grafana-datasource-2.png)
+![Grafana Datasources UI](images/grafana-datasource-2.png)
 
 **Step 11)** Select Prometheus Data Source for Grafana
 
-![Grafana Prometheus Datasources UI](grafana-datasource-3.png)
+![Grafana Prometheus Datasources UI](images/grafana-datasource-3.png)
 
 **Step 12)** Provide Prometheus URL at input URL and Access -> Server and then click on ***Save and Test*** button
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-localhost-1.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-localhost-1.png)
 
 You might get Error: Bad Gateway
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-localhost-badgateway-1.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-localhost-badgateway-1.png)
 
 This is because localhost is not allowed in Grafana URL. To solve this, either Change Access to Browser
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-localhost-2.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-localhost-2.png)
 
 OR
 
 (preferrable) provide prometheus domain name. As currently prometheus is running on docker, so mention [http://host.docker.internal:9090](http://host.docker.internal:9090) in URL
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-dockerhost-1.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-dockerhost-1.png)
 
 Either way, it should solve datasource problem
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-localhosthost-3.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-localhost-3.png)
 
 **Step 13)** Now Goto "Dashboard" to create a view and select "Empty Panel"
 
-![Grafana Prometheus Datasources UI](grafana-prometheus-dockerhost-2.png)
+![Grafana Prometheus Datasources UI](images/grafana-prometheus-dockerhost-2.png)
 
 Edit the panel
 
-![Grafana Prometheus Dashboard UI](grafana-prometheus-1.png)
+![Grafana Prometheus Dashboard UI](images/grafana-prometheus-1.png)
 
 **Step 14)** Specify one of prometheus metric in Grafana followed by {} and press "Shift + Enter" or Click on Metrics Browser, Select a metric and Click "Use Query"
 
-![Grafana Prometheus Dashboard UI](grafana-prometheus-2.png)
+![Grafana Prometheus Dashboard UI](images/grafana-prometheus-2.png)
 
 You may add multiple Queries
 
 **Step 15)** You can view the same in your dashboard
 
-![Grafana Prometheus Dashboard UI](grafana-prometheus-3.png)
+![Grafana Prometheus Dashboard UI](images/grafana-prometheus-3.png)
 
-![Grafana Prometheus Dashboard UI](grafana-prometheus-4.png)
+![Grafana Prometheus Dashboard UI](images/grafana-prometheus-4.png)
 
 
 
